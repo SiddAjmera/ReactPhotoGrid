@@ -41,7 +41,16 @@ export default function Navbar({
           onChange={(event) => setQuery(event.target.value)}
         />
         <NavFormDropdown>
-          <p className="dropbtn">{collection || 'Collections'}</p>
+          <p
+            className="dropbtn"
+            onClick={() => {
+              const dropdownMenu = document.getElementById('dropdownMenu');
+              console.log('**** dropdownMenu: ', dropdownMenu);
+              dropdownMenu.style.display = 'block';
+            }}
+          >
+            {collection || 'Collections'}
+          </p>
           {/* <span className="border"></span> */}
           <ul id="dropdownMenu" className="dropdown-content">
             {collections.map((collectionItem) => (

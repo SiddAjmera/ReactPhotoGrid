@@ -49,8 +49,8 @@ export const NavFormDropdown = styled.div`
   margin-right: 20px;
   background: white;
   cursor: pointer;
-  -webkit-box-shadow: 0px 20px 0px -10px #D5D7E5; 
-  box-shadow: 0px 20px 0px -10px #D5D7E5;
+  // -webkit-box-shadow: 0px 20px 0px -10px #D5D7E5; 
+  // box-shadow: 0px 20px 0px -10px #D5D7E5;
 
   /* .border {
     width: 350px;
@@ -64,14 +64,18 @@ export const NavFormDropdown = styled.div`
     padding-left: 20px;
     padding-top: 10px;
     margin: 0;
+
+    &:after {
+      content:"";
+      position:absolute; top:10px; bottom:10px; left:10px; right:10px;
+      border-radius:10px;
+      z-index:-1;
+      box-shadow: rgba(0, 0, 0, 0.8) 0 15px 0px 0px;
+    }
   }
 
   .dropdown-content {
     display: none;
-  }
-
-  &:hover .dropdown-content {
-    display: block;
     position: absolute;
     background: white;
     width: inherit;

@@ -51,8 +51,8 @@ export default function App() {
   };
 
   useEffect(() => {
-    // getImages();
-  }, [query, collection]);
+    getImages();
+  }, []);
 
   return (
     <>
