@@ -41,7 +41,7 @@ export default function App() {
               ...photo,
               sources: { ...photo.src },
               src: photo.src.medium,
-              source: photo.src.large,
+              source: photo.src.original,
               title: photo.alt,
             })),
           ]

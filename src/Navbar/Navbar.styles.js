@@ -33,6 +33,8 @@ export const NavFormInput = styled.input`
   border-radius: 4px;
   border-color: transparent;
   margin-right: 20px;
+  color: #050417;
+  font-size: 16px;
 
   &:focus{
     outline: none;
@@ -49,28 +51,24 @@ export const NavFormDropdown = styled.div`
   margin-right: 20px;
   background: white;
   cursor: pointer;
-  // -webkit-box-shadow: 0px 20px 0px -10px #D5D7E5; 
-  // box-shadow: 0px 20px 0px -10px #D5D7E5;
-
-  /* .border {
-    width: 350px;
-    height: 5px;
-    background: #D5D7E5;
-    border-radius-bottom-left: 4px;
-    border-radius-bottom-right: 4px;
-  } */
 
   .dropbtn {
     padding-left: 20px;
     padding-top: 10px;
     margin: 0;
-
+    position: relative;
+    height: 45px;
+  
     &:after {
       content:"";
-      position:absolute; top:10px; bottom:10px; left:10px; right:10px;
+      position:absolute;
+      top:0px;
+      bottom:10px;
+      left:10px;
+      right:10px;
       border-radius:10px;
       z-index:-1;
-      box-shadow: rgba(0, 0, 0, 0.8) 0 15px 0px 0px;
+      box-shadow: #D5D7E5 0 15px 0px 0px;
     }
   }
 
@@ -82,6 +80,8 @@ export const NavFormDropdown = styled.div`
     width: 400px;
     list-style: none;
     padding: 0;
+    margin: 0;
+    transform: translateY(-10px);
     li {
       background: #FFFFFF;
       color: #000000;

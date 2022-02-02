@@ -14,8 +14,7 @@ export const Modal = styled.div`
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
 `;
 
 export const ModalContent = styled.div`
@@ -26,6 +25,11 @@ export const ModalContent = styled.div`
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
+
+  img {
+    max-height: 100vh;
+    object-fit: cover;
+  }
 `;
 
 export const PhotographerMetadata = styled.div`

@@ -49,9 +49,14 @@ export default function Navbar({
               dropdownMenu.style.display = 'block';
             }}
           >
-            {collection || 'Collections'}
+            <span
+              style={{
+                color: collection ? '#000000' : '#D5D7E5',
+              }}
+            >
+              {collection || 'Collections'}
+            </span>
           </p>
-          {/* <span className="border"></span> */}
           <ul id="dropdownMenu" className="dropdown-content">
             {collections.map((collectionItem) => (
               <li
