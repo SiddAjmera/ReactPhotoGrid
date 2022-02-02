@@ -4,8 +4,8 @@ import {
   NavIcon,
   NavForm,
   NavFormInput,
-  Menu,
   NavFormButton,
+  NavFormDropdown,
 } from './Navbar.styles';
 
 export default function Navbar({
@@ -40,24 +40,24 @@ export default function Navbar({
           value={query}
           onChange={(event) => setQuery(event.target.value)}
         />
-        <Menu>
-          <li className="dropdown">
-            <a href="#" className="dropbtn">
-              {collection || 'Collections'}
-            </a>
-            <div className="dropdown-content">
-              {collections.map((collectionItem) => (
-                <a
-                  key={collectionItem}
-                  onClick={() => setCollection(collectionItem)}
-                  href="#"
-                >
-                  {collectionItem}
-                </a>
-              ))}
-            </div>
-          </li>
-        </Menu>
+        <NavFormDropdown>
+          <p className="dropbtn">{collection || 'Collections'}</p>
+          {/* <span className="border"></span> */}
+          <ul id="dropdownMenu" className="dropdown-content">
+            {collections.map((collectionItem) => (
+              <li
+                key={collectionItem}
+                onClick={() => {
+                  setCollection(collectionItem);
+                  const dropdownMenu = document.getElementById('dropdownMenu');
+                  dropdownMenu.style.display = 'none';
+                }}
+              >
+                {collectionItem}
+              </li>
+            ))}
+          </ul>
+        </NavFormDropdown>
         <NavFormButton onClick={() => getImages()} type="button">
           Search
         </NavFormButton>

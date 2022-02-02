@@ -4,7 +4,6 @@ import axios from 'axios';
 import GlobalStyles from './global.styles';
 import { Loader } from './App.styles';
 import Navbar from './Navbar/Navbar';
-import NavbarBS from './Navbar/NavbarBS';
 import PhotoGrid from './PhotoGrid/PhotoGrid';
 import { photos } from './photos';
 import './style.css';
@@ -52,12 +51,12 @@ export default function App() {
   };
 
   useEffect(() => {
-    getImages();
+    // getImages();
   }, [query, collection]);
 
   return (
     <>
-      <GlobalStyles />
+      {/* <GlobalStyles /> */}
       <Navbar
         query={query}
         setQuery={setQuery}

@@ -39,63 +39,54 @@ export const NavFormInput = styled.input`
   }
 `;
 
-export const Menu = styled.ul`
-  /* main UL component called: "Menu" */
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  margin-right: 20px;
+export const NavFormDropdown = styled.div`
+  width: 400px;
+  height: 50px;
+  align-items: center;
+  verticle-align: center;
   border-radius: 4px;
-  -webkit-box-shadow: 0px 20px 0px -10px grey; 
-  box-shadow: 0px 20px 0px -10px grey;
+  border-color: transparent;
+  margin-right: 20px;
+  background: white;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 20px 0px -10px #D5D7E5; 
+  box-shadow: 0px 20px 0px -10px #D5D7E5;
 
-  /* main LI */
-  & > li {
-    float: left;
+  /* .border {
+    width: 350px;
+    height: 5px;
+    background: #D5D7E5;
+    border-radius-bottom-left: 4px;
+    border-radius-bottom-right: 4px;
+  } */
 
-    & > a {
-      width: 400px;
-      height: 50px;
-      display: inline-block;
-      background: #FFFFFF;
-      color: #000000;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-
-      &:hover {
-        background-color: #F3F3F7;
-      }
-    }
+  .dropbtn {
+    padding-left: 20px;
+    padding-top: 10px;
+    margin: 0;
   }
 
-  /* dropdown LI */
-  & > .dropdown {
-    display: inline-block;
+  .dropdown-content {
+    display: none;
+  }
 
-    & > .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #FFFFFF;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
+  &:hover .dropdown-content {
+    display: block;
+    position: absolute;
+    background: white;
+    width: inherit;
+    width: 400px;
+    list-style: none;
+    padding: 0;
+    li {
+      background: #FFFFFF;
+      color: #000000;
+      padding: 15px 20px;
+      font-weight: bold;
 
-      & > a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        text-align: left;
-        &:hover {
-          background-color: #FFFFFF;
-        }
+      &:hover {
+        background: rgba(213, 215, 229, 0.3)
       }
-    }
-
-    &:hover .dropdown-content {
-      display: block
     }
   }
 `;
@@ -105,7 +96,7 @@ export const NavFormButton = styled.button`
   height: 50px;
   border-radius: 25px;
   border: none;
-  background: #2A2A8D;
+  background: #2A2B8D;
   color: #FFFFFF;
   font-weight: bold;
   font-size: 12px;
