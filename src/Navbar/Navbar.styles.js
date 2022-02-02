@@ -13,7 +13,12 @@ export const Nav = styled.nav`
   z-index: 1;
 `;
 
-export const NavIcon = styled.a``;
+export const NavIcon = styled.a`
+  img {
+    width: 70px;
+    margin-right: 20px;
+  }
+`;
 
 export const NavForm = styled.form`
   display: flex;
@@ -27,27 +32,10 @@ export const NavFormInput = styled.input`
   padding: 15px;
   border-radius: 4px;
   border-color: transparent;
-`;
+  margin-right: 20px;
 
-export const NavFormSelectList = styled.div`
-  button {
-    width: 400px;
-    height: 50px;
-    padding: 15px;
-    border-radius: 4px;
-    border-color: transparent;
-  }
-
-  div {
-    display: flex;
-    flex-direction: column;
-    a {
-      width: 400px;
-      height: 50px;
-      padding: 15px;
-      border-radius: 4px;
-      border-color: transparent;
-    }
+  &:focus{
+    outline: none;
   }
 `;
 
@@ -57,21 +45,27 @@ export const Menu = styled.ul`
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  margin-right: 20px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 20px 0px -10px grey; 
+  box-shadow: 0px 20px 0px -10px grey;
 
   /* main LI */
   & > li {
     float: left;
 
     & > a {
+      width: 400px;
+      height: 50px;
       display: inline-block;
-      color: white;
+      background: #FFFFFF;
+      color: #000000;
       text-align: center;
       padding: 14px 16px;
       text-decoration: none;
 
       &:hover {
-        background-color: red;
+        background-color: #F3F3F7;
       }
     }
   }
@@ -83,7 +77,7 @@ export const Menu = styled.ul`
     & > .dropdown-content {
       display: none;
       position: absolute;
-      background-color: #f9f9f9;
+      background-color: #FFFFFF;
       min-width: 160px;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
       z-index: 1;
@@ -95,7 +89,7 @@ export const Menu = styled.ul`
         display: block;
         text-align: left;
         &:hover {
-          background-color: #f1f1f1;
+          background-color: #FFFFFF;
         }
       }
     }
@@ -107,8 +101,8 @@ export const Menu = styled.ul`
 `;
 
 export const NavFormButton = styled.button`
-  width: 150px;
-  height: 40px;
+  width: 250px;
+  height: 50px;
   border-radius: 25px;
   border: none;
   background: #2A2A8D;

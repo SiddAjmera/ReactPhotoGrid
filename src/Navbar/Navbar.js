@@ -8,27 +8,59 @@ import {
   NavFormButton,
 } from './Navbar.styles';
 
-export default function Navbar({ query, collection }) {
+export default function Navbar({
+  query,
+  setQuery,
+  collection,
+  setCollection,
+  getImages,
+}) {
+  const collections = [
+    'Featured',
+    'Wallpapers',
+    'Nature',
+    'Textures & Patters',
+    'Architecture',
+  ];
+
   return (
     <Nav>
-      <NavIcon>Icon</NavIcon>
+      <NavIcon>
+        <img
+          src={
+            'https://i.ibb.co/Q6917Cx/Screen-Shot-2022-02-02-at-11-15-51-am-removebg-preview.png'
+          }
+        />
+      </NavIcon>
       <NavForm>
-        <NavFormInput type="search" placeholder="Search" aria-label="Search" />
+        <NavFormInput
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+          value={query}
+          onChange={(event) => setQuery(event.target.value)}
+        />
         <Menu>
           <li className="dropdown">
             <a href="#" className="dropbtn">
-              Collections
+              {collection || 'Collections'}
             </a>
             <div className="dropdown-content">
-              <a href="#">Featured</a>
-              <a href="#">Wallpapers</a>
-              <a href="#">Nature</a>
-              <a href="#">Textures & Patters</a>
-              <a href="#">Architecture</a>
+              {collections.map((collectionItem) => (
+                <a
+                  key={collectionItem}
+                  onClick={() => setCollection(collectionItem)}
+                  href="#"
+                >
+                  {collectionItem}
+                </a>
+              ))}
             </div>
           </li>
         </Menu>
-        <NavFormButton type="button">Search</NavFormButton>
+        <NavFormButton onClick={() => getImages()} type="button">
+          Search
+        </NavFormButton>
       </NavForm>
     </Nav>
   );
