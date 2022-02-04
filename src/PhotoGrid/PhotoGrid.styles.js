@@ -2,6 +2,10 @@ import styled from 'styled-components';
 
 export const PhotoGridContainer = styled.div` 
   margin: 175px 100px;
+
+  @media screen and (max-width: 767px) {
+    margin: 300px 20px;
+  }
 `;
 
 export const Modal = styled.div`
