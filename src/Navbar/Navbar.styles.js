@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Nav = styled.nav` 
+export const Nav = styled.nav`
   height: 120px;
   display: flex;
   align-items: center;
@@ -36,7 +36,7 @@ export const NavFormInput = styled.input`
   color: #050417;
   font-size: 16px;
 
-  &:focus{
+  &:focus {
     outline: none;
   }
 `;
@@ -58,17 +58,17 @@ export const NavFormDropdown = styled.div`
     margin: 0;
     position: relative;
     height: 45px;
-  
+
     &:after {
-      content:"";
-      position:absolute;
-      top:0px;
-      bottom:10px;
-      left:10px;
-      right:10px;
-      border-radius:10px;
-      z-index:-1;
-      box-shadow: #D5D7E5 0 15px 0px 0px;
+      content: "";
+      position: absolute;
+      top: 0px;
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
+      border-radius: 10px;
+      z-index: -1;
+      box-shadow: #d5d7e5 0 15px 0px 0px;
     }
   }
 
@@ -83,13 +83,13 @@ export const NavFormDropdown = styled.div`
     margin: 0;
     transform: translateY(-10px);
     li {
-      background: #FFFFFF;
+      background: #ffffff;
       color: #000000;
       padding: 15px 20px;
       font-weight: bold;
 
       &:hover {
-        background: rgba(213, 215, 229, 0.3)
+        background: rgba(213, 215, 229, 0.3);
       }
     }
   }
@@ -100,8 +100,8 @@ export const NavFormButton = styled.button`
   height: 50px;
   border-radius: 25px;
   border: none;
-  background: #2A2B8D;
-  color: #FFFFFF;
+  background: #2a2b8d;
+  color: #ffffff;
   font-weight: bold;
   font-size: 12px;
   text-transform: uppercase;

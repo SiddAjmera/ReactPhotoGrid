@@ -1,27 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import GlobalStyles from './global.styles';
 import { Loader } from './App.styles';
 import Navbar from './Navbar/Navbar';
 import PhotoGrid from './PhotoGrid/PhotoGrid';
-import { photos } from './photos';
 import './style.css';
 
 export default function App() {
   const [query, setQuery] = useState('Torronto');
-  const [collection, setCollection] = useState('Architecture');
+  const [collectionId, setCollectionId] = useState('Architecture');
   const [page, setPage] = useState(1);
-  const [perPage, setPerPage] = useState(30);
+  const [perPage, setPerPage] = useState(10);
   const [photos, setPhotos] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const collections = [
+    { id: 1, title: 'Airplanes' },
+    { id: 2, title: 'Mountains' },
+    { id: 3, title: 'Basketball' },
+    { id: 4, title: 'Forest' },
+    { id: 5, title: 'Halloween' },
+  ];
 
-  // TODO: Check with Kutlu whether we need to call the API on click of the search button or on change of either the query or collection.
-
-  // NOTE: ATM, we're calling the API on change of either Search Query or Collection. But it's not very efficient, especially in case of change in the query. But since he insisted on handling state management in useEffect, that's how the code has been implemented.
   const getImages = async () => {
     setIsLoading(true);
-    const searchQuery = `${query ? query + ' ' : ''}${collection || ''}`;
+    const searchQuery = `${query ? query + ' ' : ''}${collectionId || ''}`;
     const {
       data: { photos: photosToSet },
     } = await axios(
@@ -60,9 +62,10 @@ export default function App() {
       <Navbar
         query={query}
         setQuery={setQuery}
-        collection={collection}
-        setCollection={setCollection}
+        collectionId={collectionId}
+        setCollectionId={setCollectionId}
         getImages={getImages}
+        collections={collections}
       />
       {isLoading ? (
         <Loader src={'https://i.ibb.co/47vf2WV/Spinner-1s-200px.gif'} />

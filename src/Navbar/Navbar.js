@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Nav,
   NavIcon,
@@ -11,21 +11,21 @@ import {
 export default function Navbar({
   query,
   setQuery,
-  collection,
-  setCollection,
+  collections,
+  collectionId,
+  setCollectionId,
   getImages,
 }) {
-  const collections = [
-    'Featured',
-    'Wallpapers',
-    'Nature',
-    'Textures & Patters',
-    'Architecture',
-  ];
+  const [collection, setCollection] = useState();
+
+  useEffect(() => {
+    const collectionToSet = collections.find(({ id }) => id === collectionId);
+    collectionToSet && setCollection(collectionToSet);
+  }, [collectionId]);
 
   return (
     <Nav>
-      <NavIcon>
+      <NavIcon href="/">
         <img
           src={
             'https://i.ibb.co/Q6917Cx/Screen-Shot-2022-02-02-at-11-15-51-am-removebg-preview.png'
@@ -45,7 +45,6 @@ export default function Navbar({
             className="dropbtn"
             onClick={() => {
               const dropdownMenu = document.getElementById('dropdownMenu');
-              console.log('**** dropdownMenu: ', dropdownMenu);
               dropdownMenu.style.display = 'block';
             }}
           >
@@ -54,20 +53,20 @@ export default function Navbar({
                 color: collection ? '#000000' : '#D5D7E5',
               }}
             >
-              {collection || 'Collections'}
+              {collection ? collection.title : 'Collections'}
             </span>
           </p>
           <ul id="dropdownMenu" className="dropdown-content">
             {collections.map((collectionItem) => (
               <li
-                key={collectionItem}
+                key={collectionItem.title}
                 onClick={() => {
-                  setCollection(collectionItem);
+                  setCollectionId(collectionItem.id);
                   const dropdownMenu = document.getElementById('dropdownMenu');
                   dropdownMenu.style.display = 'none';
                 }}
               >
-                {collectionItem}
+                {collectionItem.title}
               </li>
             ))}
           </ul>
